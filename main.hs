@@ -40,3 +40,7 @@ compareLastNames name1 name2 = (\result ->
                                  then compare (fst name1) (fst name2)
                                  else result
                                )(compare (snd name1) (snd name2))
+
+-- q4.2
+dcOffice name = nameText ++ " esq " ++ "PO Box Washington DC"
+                where nameText = (fst name) ++ " " ++ (snd name)
