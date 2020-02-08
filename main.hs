@@ -44,3 +44,6 @@ compareLastNames name1 name2 = (\result ->
 -- q4.2
 dcOffice name = nameText ++ " esq " ++ "PO Box Washington DC"
                 where nameText = (fst name) ++ " " ++ (snd name)
+
+-- q5.1
+binaryPartialApplication binaryFunction x = (\y -> binaryFunction x y)
