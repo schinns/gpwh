@@ -47,3 +47,6 @@ dcOffice name = nameText ++ " esq " ++ "PO Box Washington DC"
 
 -- q5.1
 binaryPartialApplication binaryFunction x = (\y -> binaryFunction x y)
+
+-- q6.1
+_repeat x = cycle x:[]
