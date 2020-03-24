@@ -50,3 +50,13 @@ binaryPartialApplication binaryFunction x = (\y -> binaryFunction x y)
 
 -- q6.1
 _repeat x = cycle x:[]
+
+--q7.1
+myTail xs = case length xs of
+  0 -> []
+  _ -> tail xs
+--q7.2
+myGCD a b = case remainder of
+  0 -> b
+  _ -> myGCD b remainder
+  where remainder = a `mod` b
