@@ -66,4 +66,9 @@ myGCD a b = case remainder of
 myLength [] = 0
 myLength (x:xs) = 1 + myLength xs
 
-
+--q8.1
+myReverse [] = []
+myReverse xs = last:myReverse noLast 
+  where l = length xs - 1
+        last = xs !! l 
+        noLast = take l xs
