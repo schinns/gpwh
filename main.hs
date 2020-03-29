@@ -72,3 +72,10 @@ myReverse xs = last:myReverse noLast
   where l = length xs - 1
         last = xs !! l 
         noLast = take l xs
+
+--qc9.1
+myRemove test [] = []
+myRemove test (x:xs) = if test x
+                       then myRemove test xs
+                       else x:myRemove test xs
+
