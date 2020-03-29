@@ -78,4 +78,11 @@ myRemove test [] = []
 myRemove test (x:xs) = if test x
                        then myRemove test xs
                        else x:myRemove test xs
+--q9.1
+myElem x [] = False 
+myElem e xs = if length fxs > 0 
+              then True
+              else False
+              where fxs = filter (\x -> e == x) xs
+
 
