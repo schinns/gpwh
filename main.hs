@@ -85,4 +85,6 @@ myElem e xs = if length fxs > 0
               else False
               where fxs = filter (\x -> e == x) xs
 
-
+-- qc11.1
+halve :: Int -> Int
+halve x = div x 2
