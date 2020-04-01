@@ -1,5 +1,3 @@
--- q2.2
-inc x = x + 1
 
 double x = x * 2
 
@@ -88,3 +86,7 @@ myElem e xs = if length fxs > 0
 -- qc11.1
 halve :: Int -> Int
 halve x = div x 2
+
+--qc11.2
+printDouble :: Int -> String
+printDouble x = show(x*2)
