@@ -90,3 +90,31 @@ halve x = div x 2
 --qc11.2
 printDouble :: Int -> String
 printDouble x = show(x*2)
+
+
+--q12.1
+type MiddleName = String
+type FirstName = String
+type LastName = String
+data Name = Name FirstName LastName
+          | NameWithMiddle FirstName MiddleName LastName
+data Sex = Male | Female
+data RhType = Pos | Neg
+data ABOType = A | B | AB | O
+data BloodType = BloodType ABOType RhType
+data Patient = Patient { name :: Name
+                      , sex :: Sex
+                      , age :: Int
+                      , height :: Int
+                      , weight :: Int
+                      , bloodType :: BloodType }
+
+canDonateTo :: Patient -> Patient -> Bool
+canDonateTo p1 p2 = case (b1, b2) of
+  ((BloodType O _), _) -> True
+  (_, (BloodType AB _)) -> True
+  ((BloodType A _), (BloodType A _)) -> True
+  ((BloodType B _), (BloodType B _)) -> True
+  (_, _) -> False
+  where b1 = bloodType p1
+        b2 = bloodType p2
