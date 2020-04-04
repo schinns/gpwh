@@ -118,3 +118,8 @@ canDonateTo p1 p2 = case (b1, b2) of
   (_, _) -> False
   where b1 = bloodType p1
         b2 = bloodType p2
+--q13.3
+cycleSucc :: (Bounded a, Enum a, Eq a) => a -> a
+cycleSucc n = if n == maxBound
+              then minBound
+              else succ n
