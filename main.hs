@@ -123,3 +123,29 @@ cycleSucc :: (Bounded a, Enum a, Eq a) => a -> a
 cycleSucc n = if n == maxBound
               then minBound
               else succ n
+
+--q14.2
+data FiveSidedDie = S1 | S2 | S3 | S4 | S5 deriving(Eq, Show)
+
+class Die a where
+isMin :: FiveSidedDie -> Bool
+isMax :: FiveSidedDie -> Bool
+
+instance Enum FiveSidedDie where
+toEnum 0 = S1
+toEnum 1 = S2
+toEnum 2 = S3
+toEnum 3 = S4
+toEnum 4 = S5
+toEnum _ = error "No such value"
+fromEnum S1 = 0
+fromEnum S2 = 1
+fromEnum S3 = 2
+fromEnum S4 = 3
+fromEnum S5 = 4
+
+instance Die FiveSidedDie where
+isMin S1 = True
+isMin _ = False
+isMax S5 = True
+isMax _ = False
